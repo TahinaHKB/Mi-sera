@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Créer un compte {{ errSignIn}} </h2>
+        <form enctype="multipart/form-data" method="POST" action="signIn">
+            {% csrf_token %}
+            {{ formSI.as_p }}
+            <input type="submit" value="s'inscrire">
+        </form>
+    </div>
+    <div>
+        <h2>Connexion {{ errSignUp }} </h2>
+        <form enctype="multipart/form-data" method="POST" action="signUp">
+            {% csrf_token %}
+            {{ formSU.as_p }}
+            <input type="submit" value="se connecter">
+        </form>
+    </div>
+</body>
+</html>
